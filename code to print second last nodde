@@ -1,0 +1,69 @@
+class Main{
+    node head = null;
+    class node{
+        String data;
+        node next;
+        node(String data){
+            this.data = data;
+            this.next =  null;
+        }
+    }
+    public void addnodeatfirst(String data){
+        node newnode = new node(data);
+        if (head == null){
+            head = newnode;
+            return;
+        }
+        newnode.next = head;
+        head = newnode;
+    }
+    public void printlist(){
+        if (head == null){
+            System.out.println("list is empty");
+            return;
+        }
+        node curuntnode = head;
+        while (curuntnode !=null){
+            System.out.print(curuntnode.data+ "->");
+            curuntnode = curuntnode.next;
+        }
+        System.out.println("NULL");
+    }
+    public int secondlast(int pos){
+        node curntnode = head;
+        int length = 0;
+
+        while (curntnode != null){
+            length++;
+            curntnode = curntnode.next;
+        }
+        int diff = (length-pos)+1;
+        return diff;
+    }
+    public void printseclast(int position){
+        node curuntnode = head;
+        int count = 0;
+        while (curuntnode != null){
+            count++;
+            if(count == position-1){
+                curuntnode.next = curuntnode.next.next;
+                break;
+            }
+            curuntnode = curuntnode.next;
+        }
+    }
+    public static void main(String[] args) {
+        Main list = new Main();
+        list.addnodeatfirst("oho");
+        list.addnodeatfirst("wow");
+        list.addnodeatfirst("cool");
+        list.addnodeatfirst("oho1");
+        list.addnodeatfirst("wow1");
+        list.addnodeatfirst("cool1");
+        list.printlist();
+        System.out.println(list.secondlast(2));
+        int pos1  = list.secondlast(2);
+       list.printseclast(pos1);
+       list.printlist();
+    }
+}
