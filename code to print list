@@ -1,0 +1,12 @@
+    public void printlist(){
+        if (head == null){
+            System.out.println("list is empty");
+            return;
+        }
+        node curuntnode = head;
+        while (curuntnode !=null){
+            System.out.print(curuntnode.data+ "->");
+            curuntnode = curuntnode.next;
+        }
+        System.out.println("NULL");
+    }
