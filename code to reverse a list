@@ -1,0 +1,15 @@
+    public node reverselist(node head){
+
+        node prevnode = head;
+        node crntnode = head.next;
+        while (crntnode != null ){
+            node nextnode = crntnode.next;
+            crntnode.next = prevnode;
+
+            prevnode = crntnode;
+            crntnode = nextnode;                                //1 2 3 2 1
+        }
+        head.next = null;
+        head = prevnode;
+        return head;
+    }
