@@ -1,0 +1,29 @@
+    public void deletefirst(){
+        if (head == null){
+            System.out.println("your list is empty");
+            return;
+        }
+        head = head.next;
+    }
+    public void deltlast(){
+        if (head == null){
+            System.out.println("list is empty");
+            return;
+        }
+        node secndlast = head;
+        node lastnode = head.next;
+        while (lastnode != null){
+            lastnode = lastnode.next;
+            secndlast = secndlast.next;
+        }
+       secndlast.next = null;
+    }
+    public void removenode(int pos){
+        node curuntnode = head;
+        int count = 1;
+        while (count != pos-1){
+            count++;
+            curuntnode = curuntnode.next;
+        }
+        curuntnode.next = curuntnode.next.next;
+    }
