@@ -1,0 +1,9 @@
+   public void addnodeatfirst(String data){
+        node newnode = new node(data);
+        if (head == null){
+            head = newnode;
+            return;
+        }
+        newnode.next = head;
+        head = newnode;
+    }
