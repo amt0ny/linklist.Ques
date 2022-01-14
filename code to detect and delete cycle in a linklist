@@ -1,0 +1,22 @@
+    public node cycle(){
+        node fast = head;
+        node slow = head;
+        while (fast != null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow){
+                break;
+            }
+        }
+        return slow;
+    }
+    public void brokecycle(node cycle){
+        node meet = cycle;
+        node curntnode = head;
+        while (meet.next != curntnode.next){
+            meet = meet.next;
+            curntnode = curntnode.next;
+        }
+        meet.next = null;
+        System.out.println(meet.data);
+    }
