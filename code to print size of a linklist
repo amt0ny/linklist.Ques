@@ -1,0 +1,9 @@
+    public void size(){
+        int count = 0;
+        node curntnode = head;
+        while (curntnode != null){
+            count++;
+            curntnode = curntnode.next;
+        }
+        System.out.println(count);
+    }
