@@ -1,0 +1,53 @@
+    public node reverselist(node head){
+
+        node prevnode = head;
+        node crntnode = head.next;
+        while (crntnode != null ){
+            node nextnode = crntnode.next;
+            crntnode.next = prevnode;
+
+            prevnode = crntnode;
+            crntnode = nextnode;                                //1 2 3 2 1
+        }
+        head.next = null;
+        head = prevnode;
+        return head;
+    }
+    public node findmiddle2(node head){
+        node hare = head;
+        node turtle = head;
+        while (hare.next != null && hare.next.next != null){
+            hare = hare.next.next;
+            turtle = turtle.next;
+        }
+        return turtle;
+    }
+    boolean palindrom(node head){
+        if (head == null && head.next == null){
+            System.out.println("list is a palindrome");
+            return true;
+        }
+        node mid = findmiddle2(head);
+        node last = reverselist(mid);
+        node curntnode = head;
+        while ( last !=null){
+            if (last.data != curntnode.data){
+                return false;
+            }
+            last = last.next;
+            curntnode = curntnode.next;
+        }
+        return true;
+    }
+
+
+    public static void main(String[] args) {
+        Main list = new Main();
+        list.addnodeatfirst(1);
+        list.addnodeatfirst(2);
+        list.addnodeatfirst(3);
+        list.addnodeatfirst(2);
+        list.addnodeatfirst(1);
+        list.printlist();
+        System.out.println(list.palindrom(list.head));
+}
