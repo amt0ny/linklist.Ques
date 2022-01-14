@@ -1,0 +1,17 @@
+   public void search (String num ){
+        node curntnode = head;
+        int count =0;
+        while (curntnode != null){
+            count++;
+            if (curntnode.data.equals(num)){
+
+                System.out.println("list contains num");
+                System.out.println(count);
+                break;
+            }
+            else {
+                System.out.println("list dosent contain");
+            }
+            curntnode = curntnode.next;
+        }
+    }
