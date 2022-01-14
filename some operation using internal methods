@@ -1,0 +1,29 @@
+    public static void main(String[] args) {
+
+        LinkedList<String> list = new LinkedList<String>();
+
+//// add elements at first or last
+        list.addFirst("is");
+        list.addLast("a");
+        list.addFirst("this");
+        list.addLast("list");
+        System.out.println(list);
+
+///// add element at specific index
+        list.add(3,"our");
+        System.out.println(list);
+
+///// print length of list
+        int len = list.size();
+        System.out.println("length of list : "+ len);
+
+///// remove first or last element
+        list.removeLast();
+        list.removeFirst();
+        System.out.println(list);
+
+////// remove element of specific index
+        list.remove(2);
+        System.out.println(list);
+
+    }
