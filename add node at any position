@@ -1,0 +1,14 @@
+    public void addatanyposition(String data,int pos){
+        int count = 1;
+        node newnode = new node(data);
+        node currntnode = head;
+        node storenode = head;
+        while (count != pos-1){
+            count++;
+            currntnode = currntnode.next;
+            storenode = storenode.next;
+        }
+        storenode = currntnode.next;
+        currntnode.next = newnode;
+        newnode.next = storenode;
+    }
